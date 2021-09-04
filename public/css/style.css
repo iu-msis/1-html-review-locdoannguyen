@@ -1,0 +1,31 @@
+body {
+    background-color: #a89595;
+}
+
+h1 {
+    color: #554a7c;
+    font-weight: bolder;
+}
+a:link {
+    color: #040c16;
+}
+p {
+    font-size:medium;
+ }
+
+.red{
+    color: #8B0000;
+}
+
+#text{
+    color: 	#8B008B;
+    font-size: medium;
+
+}
+
+#border{
+    border-color: #040c16;
+    background-color: #8B008B;
+    border-width: medium;
+    padding: 10px;
+}
