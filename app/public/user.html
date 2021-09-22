@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
- 
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,19 +40,33 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-         
-          <div class="col-4"><br><p id="text"> I am Loc Nguyen. I come from Vietnam.</p><p></p> My birthdate is April 22, 1998. </p>
-            <p> I am 23 years old. </p> <p> 
-            <a href="mailto: locnguyen@fake.com"> Email</a></p></div>
-            <div class="col-4"><br><a target="_blank" href="img/dog.jpg">
-                <img class="img-thumbnail" width=290px src="img/dog.jpg" alt="Dog"> </a> 
-            </div>
-                <div class="col-4"><br><a target="_blank" href="img/pig.jpg">
-                    <img class="img-thumbnail" width=300px height = 400px src="img/pig.jpg" alt="Dog"> </a> </div>
-        
+      <div class="row">
+        <div id="rpApp" class="row align-items-start">   
+          <div class="col col-4">
+            <img :src="pic">
+          </div>
+          
+          <div class="col col-8">
+            <p>Name: {{firstname}} {{lastname}}</p>
+            <p>Country: {{country}}</p>
+            <p>Birthday: {{prettyBirthday}}</p>
+            <p>Age: {{age}}</p>
+            
+            <p><a v-bind:href="'mailto:' + email">{{ email }}</a></p>
+
+            <form v-on:submit.prevent="fetchUserData">
+              <button type="submit">Refresh</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-8"><br><a target="_blank" href="img/dog.jpg">
+          <img class="img-thumbnail" width=290px src="img/dog.jpg" alt="Dog"> </a> 
+      </div>
+          <div class="col-8"><br><a target="_blank" href="img/pig.jpg">
+              <img class="img-thumbnail" width=300px height = 400px src="img/pig.jpg" alt="Dog"> </a> </div>
       </div>
     </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -64,5 +78,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
