@@ -10,8 +10,7 @@ const RandomPerson = {
         "age":"",
         "email":"",
         "birthday":"",
-        "pic":"",
-        "secondpic":""
+        "pic":""
         
       }
     },
