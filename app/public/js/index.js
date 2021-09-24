@@ -1,7 +1,7 @@
 const RandomPerson = {
     data() {
       return {
-        "Being": {
+        "person": {
 
         },
         "firstname":"",

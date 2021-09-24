@@ -47,7 +47,7 @@
           </div>
           
           <div class="col col-8">
-            <p>Name: {{firstname}} {{lastname}}</p>
+            <p id="text">Name: {{firstname}} {{lastname}}</p>
             <p>Country: {{country}}</p>
             <p>Birthday: {{prettyBirthday}}</p>
             <p>Age: {{age}}</p>
@@ -55,7 +55,7 @@
             <p><a v-bind:href="'mailto:' + email">{{ email }}</a></p>
 
             <form v-on:submit.prevent="fetchUserData">
-              <button type="submit">Refresh</button>
+              <button type="submit" id="text">Refresh</button>
             </form>
           </div>
         </div>
