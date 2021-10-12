@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@next"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     
@@ -38,7 +39,7 @@
           </div>
         </div>
       </nav>
-      <div class="container-fluid">
+      <div id="offerApp" class="container-fluid">
       <div class="row">
       <table id="taskTable" class="table table-striped table-sm">
         <thead>
@@ -52,39 +53,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Harry Potter</td>
-            <td>J.K Rowling</td>
-            <td>1997</td>
-            <td>Bloomsbury Publishing</td>
-            <td>3407</td>
-            <td>64.99</td>
+          <tr v-for="s in books">
+              <td>{{ s.title }}</td>
+              <td>{{ s.author }}</td>
+              <td>{{ s.yearPublished }}</td>
+              <td>{{ s.publisher }}</td>
+              <td>{{ s.pageCount }}</td>
+              <td>{{ s.msrp }}</td>
           </tr>
-            <tr>
-            <td>To Kill a Mocking Bird</td>
-            <td>Harper Lee</td>
-            <td>1960</td>
-            <td>J. B. Lippincott & Co</td>
-            <td>281</td>
-            <td>11.50</td>
-          </tr>
-            <tr>
-            <td>The Great Gatsby</td>
-            <td>F. Scott Fitzgerald</td>
-            <td>1925</td>
-            <td>Charles Scribner's Sons</td>
-            <td>240</td>
-            <td>5.99</td>
-          </tr>
-            <tr>
-            <td>Percy Jackson & the Olympians</td>
-            <td>Rick Riordan</td>
-            <td>2009</td>
-            <td>Disney Hyperion</td>
-            <td>377</td>
-            <td>5.97</td>
-          </tr>
-        </tbody>
+      </tbody>
       </table>
     </div>
   </div>
@@ -116,11 +93,11 @@
         </div>
       </form>
 
-      <script src="js/tablesort.min.js"></script>
-    <script>
+      <script src="js/index.js"></script>
+    <!-- <script>
       // Tablesort plugin from https://github.com/tristen/tablesort //
        new Tablesort(document.getElementById('taskTable'));
-    </script>
+    </script> -->
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
