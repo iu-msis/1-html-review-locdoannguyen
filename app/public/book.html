@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -60,38 +61,46 @@
               <td>{{ s.publisher }}</td>
               <td>{{ s.pageCount }}</td>
               <td>{{ s.msrp }}</td>
+              <!-- <td>
+                <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="selectOffer(offer)">Edit</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm"
+                  v-on:click="postDeleteOffer(offer)">Delete</button>
+              </td> -->
           </tr>
       </tbody>
       </table>
+      <form  v-on:submit.prevent="postNewBook">
+        
+        <label >Title</label><br>
+        <input type="text" v-model="bookForm.title" class="form-control" id="title" name="title">
+      
+      
+        <label >Author(s)</label><br>
+        <input type="text" v-model="bookForm.author" class="form-control" id="author" name="author">
+      
+      
+        <label >Year Published</label><br>
+        <input type="text"  v-model="bookForm.yearPublished" class="form-control" id="yearPublished" name="yearPublished">
+      
+     
+        <label >Publisher</label><br>
+        <input type="text" v-model="bookForm.publisher"  class="form-control" id="publisher" name="publisher">
+      
+      
+        <label >Page Count</label><br>
+        <input type="text" v-model="bookForm.pages"  class="form-control" id="pages" name="pages">
+      
+      
+        <label >MSRP</label><br>
+        <input type="text" v-model="bookForm.msrp"  class="form-control" id="msrp" name="msrp"><br><br>
+      
+      <button type="submit" class="btn btn-primary" name = "button" id = "button">Submit</button>
+    </form>
     </div>
   </div>
-
-      <form>
-        <div class="form-group">
-          <label >Title</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label >Author(s)</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label >Year Published</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label >Publisher</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label >Page Count</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label >MSRP</label>
-          <input type="text" class="form-control">
-        </div>
-      </form>
+      
+      
 
       <script src="js/index.js"></script>
     <!-- <script>
