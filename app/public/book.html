@@ -54,23 +54,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="s in books">
-              <td>{{ s.title }}</td>
-              <td>{{ s.author }}</td>
-              <td>{{ s.yearPublished }}</td>
-              <td>{{ s.publisher }}</td>
-              <td>{{ s.pageCount }}</td>
-              <td>{{ s.msrp }}</td>
-              <!-- <td>
+          <tr v-for="book in books">
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.yearPublished }}</td>
+              <td>{{ book.publisher }}</td>
+              <td>{{ book.pageCount }}</td>
+              <td>{{ book.msrp }}</td>
+              <td>
                 <button type="button" class="btn btn-outline-secondary btn-sm"
-                  v-on:click="selectOffer(offer)">Edit</button>
+                  v-on:click="selectBook(book)">Edit
+                </button>
                 <button type="button" class="btn btn-outline-secondary btn-sm"
-                  v-on:click="postDeleteOffer(offer)">Delete</button>
-              </td> -->
+                  v-on:click="postDeleteBook(book)">Delete
+                </button>
+              </td>
           </tr>
       </tbody>
       </table>
-      <form  v-on:submit.prevent="postNewBook">
+
+      <h2> {{ selectedBook === null ? "Add" : "Edit" }} Book</h2>
+      <form  v-on:submit.prevent="postBook">
         
         <label >Title</label><br>
         <input type="text" v-model="bookForm.title" class="form-control" id="title" name="title">
